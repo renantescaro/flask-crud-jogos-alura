@@ -1,5 +1,5 @@
 # Simples crud Python usando Flask
 
-## entidades
-## modal
-## templates
+* entidades
+* modal
+* templates
