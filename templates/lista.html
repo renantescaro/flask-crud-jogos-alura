@@ -1,0 +1,30 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <a href="/novo" class="btn btn-primary">Novo</a>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Console</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogo in listaJogos %}
+            <tr>
+                <td style="display: none;" class="jogoId">
+                    {{ jogo.id }}
+                </td>
+                <td>{{ jogo.nome }}</td>
+                <td>{{ jogo.categoria }}</td>
+                <td>{{ jogo.console }}</td>
+                <td>
+                    <a class="btn btn-danger" href="/apagar/{{ jogo.id }}"><i></i>Apagar</a>
+                    <a class="btn btn-warning" href="/editar/{{ jogo.id }}"><i></i>Editar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
